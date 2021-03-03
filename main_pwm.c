@@ -17,7 +17,7 @@
 #define Tin 65385 // 48 kHz 
 //**********************
 
-//---- Se馻l Sinc(ind) ----
+//---- Se帽al Sinc(ind) ----
 volatile char ind = 0; // variable de indice
 #define N 158  // Numero de muestras
 const char Y[N] = {44,44,44,44,43,43,43,43,43,43,44,44,44,44,44,44,44,43,43,
@@ -32,7 +32,7 @@ const char Y[N] = {44,44,44,44,43,43,43,43,43,43,44,44,44,44,44,44,44,43,43,
 
 //----------------------
 
-// XC8 C Compiler User?s Guide (DS50002737A), pag. 134
+// XC8 C Compiler Users Guide (DS50002737A), pag. 134
 void __interrupt(high_priority) IntTMR0(void){
     if(PIR0bits.TMR0IF == 1){
         
@@ -40,7 +40,7 @@ void __interrupt(high_priority) IntTMR0(void){
         TMR0L =  Tin;       //Carga de periodo (parte baja)
         
         CCPR1L = Y[ind++]; // 8 primeros bits de ancho de pulso (pag. 308)
-        if (ind>=N) PIE0bits.TMR0IE = 0; // Desactivar interrupci髇 por TMR0
+        if (ind>=N) PIE0bits.TMR0IE = 0; // Desactivar interrupci贸n por TMR0
         PIR0bits.TMR0IF = 0;
     }
 return;
@@ -48,7 +48,7 @@ return;
 
 void PWM(int x){
     CCPR1L = x;    // 8 primeros bits de ancho de pulso (pag. 308)
-    CCPR1H = x>>8; // 鷏timos 2 bits de ancho de pulso (pag. 309)
+    CCPR1H = x>>8; // 煤ltimos 2 bits de ancho de pulso (pag. 309)
 }
 
 void main(void) {
@@ -61,7 +61,7 @@ void main(void) {
     
     //***** TMR0 *****
     INTCONbits.GIE = 1;       // Activar interrupciones 
-    PIE0bits.TMR0IE = 1;      // Activar interrupci髇 por TMR0
+    PIE0bits.TMR0IE = 1;      // Activar interrupci贸n por TMR0
     T0CON0bits.T0EN = 0;      //Desctivar TMR0 (pag. 263)
     T0CON0bits.T016BIT = 1;   //Modo 16 bits (pag. 263)
     T0CON1bits.T0CS = 0b010;  // Fuente de reloj: FOSC/4 (pag. 264)
@@ -80,7 +80,7 @@ void main(void) {
     //    Tpwm/(4*Tosc*T2PSC)-1 = PR2
     PR2 = 0x3F; // 124.3 kHz a 8 bits  (ver Tabla 28-2, pag. 305)
     CCP1CONbits.CCP1MODE = 0b1111; // Modo PWM con TMR2 (pag. 307)
-    CCP1CONbits.CCP1FMT = 0;       // Modo alineaci髇 derecha (pag. 306)
+    CCP1CONbits.CCP1FMT = 0;       // Modo alineaci贸n derecha (pag. 306)
                                    //    -> CCPR1H[0:1]|CCPR1L[0:7] 
     T2CONbits.TMR2ON = 1;    // Encender TMR2 (pag. 295)
     CCP1CONbits.CCP1EN = 1;  // Habilitar CCP1
@@ -95,7 +95,7 @@ void main(void) {
         ind = 0;
         TMR0H = (Tin) >> 8;  //Carga de periodo (parte alta)
         TMR0L =  Tin;        //Carga de periodo (parte baja)
-        PIE0bits.TMR0IE = 1; // Activar interrupci髇 por TMR0
+        PIE0bits.TMR0IE = 1; // Activar interrupci贸n por TMR0
         __delay_ms(2);
         LATAbits.LATA1 = 0;
         __delay_ms(1000);
