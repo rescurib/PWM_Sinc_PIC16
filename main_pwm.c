@@ -1,7 +1,7 @@
 /*
  * File:   main_pwm.c
  * Author: Rodolfo E. Escobar U.
- *
+ * Las referencias a páginas son de la datasheet del PIC16F15313 a menos que se especifique otro documento.
  * Created on 28 de febrero de 2021, 05:15 PM
  */
 
@@ -75,7 +75,7 @@ void main(void) {
     T2CONbits.TMR2ON = 0;     // Apagar TMR2 (pag. 295)
     T2CLKCONbits.CS = 0b0001; // Fuente FOSC/4 (pag. 294)
     TMR2 = 0x00;              // Reiniciar timer
-    T2CONbits.T2CKPS = 0b00;  // Prescaler TMR2 1:1
+    T2CONbits.T2CKPS = 0b00;  // Prescaler TMR2 1:1 (pag. 295)
     //--- Periodo PWM = (PR2+1)*4*Tosc*T2_PRESCALER
     //    Tpwm/(4*Tosc*T2PSC)-1 = PR2
     PR2 = 0x3F; // 124.3 kHz a 8 bits  (ver Tabla 28-2, pag. 305)
