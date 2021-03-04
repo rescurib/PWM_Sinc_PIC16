@@ -55,7 +55,7 @@ He comentado el código lo mejor que pude haciendo referencias a las páginas de
 <img src="https://1.bp.blogspot.com/-H4vRJ9JR4TA/YD_nFkD6h3I/AAAAAAAACeg/i9k8OpmsNMoKbQ2CabMb5FAs-SXrDS7xgCLcBGAsYHQ/s1710/LPF_12kHz_4th_MCP602.png">
 </p>
 
-Utilicé dos MCP602 que tienen dos opamps por integrado pero podrian usar un solo MCP604. Todos los componentes de este ejemplo pueden ser conseguidos en México en [AG Electronica](https://www.agelectronica.com/). Un LM324 que es más facil de conseguir en cualquier tienda de componentes podría funcionar pero no estoy seguro si pueda dar la misma calidad en la señal. Los resultados de la implementación en físico de todo el sistema se muestran en esta captura de pantalla de un osciloscopio:
+Utilicé dos MCP602 que tienen dos opamps por integrado pero podrian usar un solo MCP604. Todos los componentes de este ejemplo pueden ser conseguidos en México en [AG Electronica](https://www.agelectronica.com/). Un LM324, que es más facil de conseguir en cualquier tienda de componentes electrónicos, podría funcionar pero no estoy seguro si pueda dar la misma calidad en la señal. Los resultados de la implementación en físico de todo el sistema se muestran en esta captura de pantalla de un osciloscopio:
 
 <p align="center">
 <img src="https://1.bp.blogspot.com/-NyPX2CSNrLA/YD_simy9zPI/AAAAAAAACeo/stY1q0qne0omPRGseFiegsF_pMMXKy9gQCLcBGAsYHQ/s800/PWM_Sinc_3k8_UTD2072CEX.png">
