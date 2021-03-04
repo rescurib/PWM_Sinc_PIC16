@@ -19,9 +19,9 @@ from scipy.interpolate import interp1d
 
 #--- Sinc ---
 F = 3800/np.pi # Frecuencia normalizada en pi
-T = 1/F    # Periodo
+T = 1/F    # Periodo de lóbulo principal
 Fs = 48000 # Frecuencia de muestreo
-Ts = 1/Fs  # Periodo de muestreo
+Ts = 1/Fs  # Periodo de muestreo (no confundir con T de lóbulo)
 K = 2      # Número de periodos de cada lado del origen
 t = np.linspace(-K*T,K*T,int(2*K*T*Fs))
 N = len(t) # Número de elementos
