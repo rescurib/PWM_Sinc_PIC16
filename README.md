@@ -11,7 +11,7 @@ Se puede notar que haciendo esto he definido mi ancho de banda de trabajo de 0 a
 <img src="https://1.bp.blogspot.com/-ONVe0puQ8Qg/YD_kTk_N7lI/AAAAAAAACeY/CD_dcmt3J7YYslfX0zznnaeuZp221lptACLcBGAsYHQ/s1600/PIC16F15313_Circuit_PWM.png">
 </p>
 
-Necesitamos un arreglo de datos de 8 bits que almacene nuestra señal Sinc. Para generar la declaración de ese arregló escribí el siguiente código de Python:
+Necesitamos un arreglo de datos de 8 bits que almacene nuestra señal Sinc. Para generar automáticamente la declaración de este arreglo escribí el siguiente código de Python:
 ```Python
 import numpy as np
 from scipy.signal import gaussian
